@@ -1,0 +1,3 @@
+Algorithm,Category,Parameters,Scaling Required,Total Observations,Normal Observations,Detected Anomalies,Anomaly Percentage (%),Advantages,Limitations
+Isolation Forest,Tree-based Ensemble (Partitioning),"n_estimators=100, contamination=0.05",No (Tree partition invariant),68774,65335,3439,5.0004,"Fast inference O(n log n), handles multi-dimensional global anomalies.",Requires prior expectation of contamination fraction.
+DBSCAN,Density-Based Spatial Clustering (Noise),"eps=0.8, min_samples=10",Yes (Euclidean distance dependent),68774,68768,6,0.0087,Discovers arbitrary density contours; no preset anomaly proportion.,Sensitive to epsilon choice; vulnerable to density variations across day/night cycles.

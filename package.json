@@ -1,0 +1,12 @@
+{
+  "name": "solar-anomaly-detection",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Anomaly Detection in Solar Power Generation Using Machine Learning (DYPCOE Akurdi)",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "server": "python server.py",
+    "start": "python server.py"
+  }
+}
