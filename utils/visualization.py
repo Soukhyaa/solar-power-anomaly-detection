@@ -247,7 +247,8 @@ def plot_model_comparison_bars(comparison_df, save_path=None):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
     # Anomaly Count
-    bars1 = ax1.bar(comparison_df['Algorithm'], comparison_df['Anomaly Count'], color=['#E67E22', '#3498DB'], edgecolor='black', width=0.5)
+    count_col = 'Anomaly Count' if 'Anomaly Count' in comparison_df.columns else ('Detected Anomalies' if 'Detected Anomalies' in comparison_df.columns else comparison_df.columns[2])
+    bars1 = ax1.bar(comparison_df['Algorithm'], comparison_df[count_col], color=['#E67E22', '#3498DB'], edgecolor='black', width=0.5)
     ax1.set_title("Detected Anomalies / Noise Points (Count)", fontsize=13, fontweight='bold')
     ax1.set_ylabel("Number of Observations", fontsize=11)
     ax1.grid(axis='y', linestyle='--', alpha=0.7)

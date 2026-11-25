@@ -84,7 +84,8 @@ assert os.path.exists("notebooks/Solar_Anomaly_Detection.ipynb"), "notebook miss
 df_anom = pd.read_csv("outputs/anomaly_results.csv")
 df_comp = pd.read_csv("outputs/model_comparison.csv")
 print(f"  Outputs verified: anomaly_results.csv has {len(df_anom):,} rows and {len(df_anom.columns)} columns.")
-print(f"  Model comparison rows:\n{df_comp[['Algorithm', 'Anomaly Count', 'Anomaly Percentage (%)']]}")
+anom_col = 'Anomaly Count' if 'Anomaly Count' in df_comp.columns else 'Detected Anomalies'
+print(f"  Model comparison rows:\n{df_comp[['Algorithm', anom_col, 'Anomaly Percentage (%)']]}")
 
 print("\n" + "=" * 80)
 print(" ALL 5 SYSTEM VERIFICATION TESTS PASSED SUCCESSFULLY!")
